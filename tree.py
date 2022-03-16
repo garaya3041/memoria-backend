@@ -479,10 +479,10 @@ class Tree:
 
     def postOrder(self, node, returnNode, typeNode="active"):
         if node!= None:
-            returnNode = self.postOrder(node.right, returnNode, typeNode)
+            returnNode = self.postOrder(node.left, returnNode, typeNode)
             if returnNode is not None:
                 return returnNode
-            returnNode = self.postOrder(node.left, returnNode, typeNode)
+            returnNode = self.postOrder(node.right, returnNode, typeNode)
             if returnNode is not None:
                 return returnNode
             if node.mark == typeNode:
