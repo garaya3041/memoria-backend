@@ -88,6 +88,7 @@ class Node:
 
     def random(self):
         x = np.array(self.x)
+        x = np.round(x,6)
         x = x%1!=0
         nonIntegers = []
         for idx, val in enumerate(x):
@@ -101,6 +102,7 @@ class Node:
 
     def lexicOrder(self, method="left-right"):
         x = np.array(self.x)
+        x = np.round(x,6)
         x = x%1!=0
         nonIntegers = []
         for idx, val in enumerate(x):
@@ -117,7 +119,9 @@ class Node:
             return False
     
     def nearToInt(self, method="most"):
-        absX = np.absolute(np.array(self.x))
+        x = np.array(self.x)
+        x = np.round(x,6)
+        absX = np.absolute(x)
         normalization = absX - np.floor(absX)
         maxi = float('-inf')
         maxIdx = None
@@ -150,6 +154,7 @@ class Node:
 
     def inValue(self, method="most"):
         x = np.array(self.x)
+        x = np.round(x,6)
         x_bool = x%1!=0
         maxi = float('-inf')
         maxIdx = None
@@ -175,6 +180,7 @@ class Node:
 
     def connected(self, method="more"):
         x = np.array(self.x)
+        x = np.round(x,6)
         x = x%1!=0
         a1 = None
         if self.A_ub and self.A_eq:
@@ -212,6 +218,7 @@ class Node:
     
     def restricted(self, method="more"):
         x = np.array(self.x)
+        x = np.round(x,6)
         x = x%1!=0
         a1 = None
         if self.A_ub and self.A_eq:
