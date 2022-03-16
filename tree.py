@@ -117,7 +117,8 @@ class Node:
             return False
     
     def nearToInt(self, method="most"):
-        normalization = np.array(self.x) - np.floor(self.x)
+        absX = np.absolute(np.array(self.x))
+        normalization = absX - np.floor(absX)
         maxi = float('-inf')
         maxIdx = None
         mini = float('inf')
