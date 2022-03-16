@@ -246,7 +246,7 @@ class Node:
         else:
             return False
 
-    def branching(self, maxId, method="more-restricted"):
+    def branching(self, maxId, method="random"):
         varIdx = self.getIndex(method)
         if varIdx is not False:
             newValue = math.floor(self.x[varIdx])
