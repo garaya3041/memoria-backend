@@ -144,9 +144,9 @@ class Node:
                     minIdx = idx
         if maxIdx is not None and minIdx is not None:
             if method == "most":
-                return maxIdx
-            elif method == "least":
                 return minIdx
+            elif method == "least":
+                return maxIdx
             else:
                 return False
         else:
